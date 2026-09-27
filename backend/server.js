@@ -27,6 +27,10 @@ const paymentRoutes = require('./routes/paymentRoutes');
 app.use('/api/v1/agents', agentRoutes);
 app.use('/api/v1/payments', paymentRoutes);
 
+app.get('/', (req, res) => {
+  res.json({ message: 'DA-WINGS GLOBAL API Service is Running Live!', status: 'online' });
+});
+
 app.get('/health', (req, res) => {
   res.status(200).json({ status: 'OK', timestamp: new Date().toISOString() });
 });
